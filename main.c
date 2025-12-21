@@ -14,8 +14,8 @@ int main() {
     int i;//döngü kontrol değişkeni
 
     FILE *dosya_oku = fopen("yillik.dat", "r");//dosyayı okuma modunda açar
-    if (dosya_oku == NULL) return 1;//eğer dosya bulunamazsa pragramı 1 hatasıyla sonlandır
-   //verileri dosya bitene kadar döndürür doysa bittiğinde döngüden çıkar
+    if (dosya_oku == NULL) return 1;//eğer dosya bulunamazsa programı 1 hatasıyla sonlandırır
+   //verileri dosya bitene kadar döndürür dosya bittiğinde döngüden çıkar
     while (fscanf(dosya_oku, "%d %s %s %d",
                   &calisanlar[sayac].sicil_no,
                   calisanlar[sayac].ad,
@@ -29,7 +29,7 @@ int main() {
                   }
     fclose(dosya_oku);//dosyasını kapatır
 
-    FILE *dosya_yaz = fopen("satislar.dat", "w");//satışlar dosyasını yazma modunda açar(varsa içeriği temziler,yoksa oluşturur)
+    FILE *dosya_yaz = fopen("satislar.dat", "w");//satışlar dosyasını yazma modunda açar(varsa içeriği temizler,yoksa oluşturur)
     if (dosya_yaz == NULL) return 1;//dosya oluşturalmazsa 1 hatasıyla geri döner
 
     for (i = 0; i < sayac; i++) {
@@ -43,10 +43,10 @@ int main() {
         if (fark == 0) {
             fprintf(dosya_yaz, "-en yuksek satis-\n");//fark 0 ise en yüksek satış miktarını yapan kişidir
         } else {  
-            fprintf(dosya_yaz, "%d\n", fark);//eğer fark 0 değilse farkı yazdır
+            fprintf(dosya_yaz, "%d\n", fark);//eğer fark 0 değilse farkı yazdırır
         }
     }
-    fclose(dosya_yaz);//  yazma işlemi bittiği için dosyayı kapat
+    fclose(dosya_yaz);//  yazma işlemi bittiği için dosyayı kapatır
 
-    return 0;//program sorunsuz bir şekilde tamamlanırsa 0 değeriyle programı sonlandır
+    return 0;//program sorunsuz bir şekilde tamamlanırsa 0 değeriyle programı sonlandırır
 }
