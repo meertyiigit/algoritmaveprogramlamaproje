@@ -48,5 +48,5 @@ int main() {
     }
     fclose(dosya_yaz);//  yazma işlemi bittiği için dosyayı kapatır
 
-    return 0;//program sorunsuz bir şekilde tamamlanırsa 0 değeriyle programı sonlandırır
+    return 0;//program sorunsuz bir şekilde tamamlanırsa 0 değeriyle programı sonlandırır.
 }
